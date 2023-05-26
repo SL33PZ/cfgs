@@ -1,0 +1,80 @@
+
+font_family                                     FiraCode-Retina +zero +onum
+bold_font                                       auto
+italic_font                                     auto
+bold_italic_font                                auto
+
+font_size                                       11.0
+force_ltr                                       no
+disable_ligatures                               never
+font_features                                   FiraCode-Retina +zero +onum
+undercurl_style                                 thin-sparse
+cursor                                                  #cccccc
+cursor_text_color                               #111111
+cursor_shape                                    block
+cursor_beam_thickness                   1.5
+cursor_underline_thickness              2.0
+cursor_blink_interval                   -1
+scrollback_lines                                2000
+wheel_scroll_multiplier                 5.0
+wheel_scroll_min_lines                  1
+touch_scroll_multiplier                 1.0
+url_color                                               #0087bd
+url_style                                               curly
+open_url_with                                   default
+detect_urls                                     yes
+show_hyperlink_targets                  no
+paste_actions                                   quote-urls-at-prompt
+
+repaint_delay                                   10
+input_delay                                     3
+sync_to_monitor                                 yes
+enable_audio_bell                               yes
+visual_bell_duration                    0.0
+visual_bell_color                               none
+window_alert_on_bell                    yes
+bell_on_tab                                     "🔔"
+command_on_bell                                 none
+remember_window_size                    yes
+initial_window_width                    900
+initial_window_height                   500
+enabled_layouts                                 *
+window_margin_width                     0
+window_padding_width                    0
+placement_strategy                              center
+active_border_color                     #00ff00
+visual_window_select_characters 1234567890ABCDEFGHIJKLMNOPQRSTUVWXYZ
+update_check_interval                   24
+clipboard_max_size                              512
+allow_hyperlinks                                yes
+shell_integration                               enabled
+
+map ctrl+c                                      copy_to_clipboard
+map ctrl+v                                      paste_from_clipboard
+map shift+insert                                paste_from_clipboard
+map ctrl+r                                      start_resizing_window
+map cmd+q                                               quit
+
+foreground                                              #bb00ff
+background                                              #212121
+background_opacity                              0.985
+selection_foreground                    #000000
+selection_background                    #fffacd
+color0                                                  #000000
+color8                                                  #767676
+color1                                                  #cc0403
+color9                                                  #f2201f
+color2                                                  #19cb00
+color10                                                 #23fd00
+color3                                                  #cecb00
+color11                                                 #fffd00
+color4                                                  #0d73cc
+color12                                                 #1a8fff
+color5                                                  #cb1ed1
+color13                                                 #fd28ff
+color6                                                  #0dcdcd
+color14                                                 #14ffff
+color7                                                  #dddddd
+color15                                                 #ffffff
+
+       

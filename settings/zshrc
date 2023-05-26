@@ -1,0 +1,71 @@
+
+neofetch | lolcat
+
+
+export ZSH="$HOME/.oh-my-zsh"
+
+ZSH_THEME="agnoster"
+
+CASE_SENSITIVE="false"
+
+HYPHEN_INSENSITIVE="true"
+zstyle ':omz:update' frequency 2
+
+DISABLE_MAGIC_FUNCTIONS="false"
+DISABLE_LS_COLORS="false"
+DISABLE_AUTO_TITLE="false"
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
+HIST_STAMPS="mm/dd/yyyy"
+
+ZSH_CUSTOM=~/.oh-my-zsh/custom
+
+plugins=(git
+        zsh-autosuggestions
+        zsh-syntax-highlighting
+        gradle-completion
+        poetry
+        )
+
+source $ZSH/oh-my-zsh.sh
+
+EMSDK_QUIET=1
+LIBGL_ALWAYS_SOFTWARE=true
+GALLIUM_DRIVER=llvmpipe
+
+api_key="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"
+
+export PATH=$PATH:$HOME/.emsdk
+export PATH=$PATH:$HOME/.emsdk/upstream/emscripten
+export PATH=$PATH:$HOME/.emsdk/node/14.18.2_64bit/bin
+export MANPATH="/usr/local/man:$MANPATH"
+export LANG=de_DE.UTF-8
+export ARCHFLAGS="-arch x86_64"
+export DENO_INSTALL="{home}/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
+export JAVA_HOME=/usr/lib/jvm/java-19-openjdk/bin/java
+export PATH=$PATH:$JAVA_HOME/bin
+
+alias cactivate="source ~/.miniconda/bin/activate"
+alias cectivate="conda deactivate"
+alias zshconfig="mate ~/.zshrc"
+alias ohmyzsh="mate ~/.oh-my-zsh"
+alias la="ls -a --color='auto'"
+
+#source "{home}/.emsdk/emsdk_env.sh"
+
+
+export PATH="$PATH:/opt/gradle/gradle-8.0/bin"
+PATH="${HOME}/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base ${HOME}/perl5"; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5"; export PERL_MM_OPT;
+NPM_PACKAGES="${HOME}/.npm-packages"
+
+
+export PATH="$PATH:$NPM_PACKAGES/bin"
+export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
+
+       

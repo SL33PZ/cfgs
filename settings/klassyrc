@@ -1,0 +1,17 @@
+
+[Common]
+ActiveTitlebarOpacity=20
+ButtonIconStyle=StyleOxygen
+InactiveTitlebarOpacity=20
+
+[Default Windeco Exception 0]
+BorderSize=1
+Enabled=true
+ExceptionProgramNamePattern=kdenlive
+ExceptionWindowPropertyPattern=.*Kdenlive
+ExceptionWindowPropertyType=1
+HideTitleBar=false
+Mask=0
+OpaqueTitleBar=true
+PreventApplyOpacityToHeader=true
+       
