@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+# ~/.bashrc
+
+filename="$0"
+
+[[ $- != *i* ]] && return
+user_conf=('klassyrc' 'krunnerrc' 'ksplashrc' 'ktimezonerc' 'systemsettings.conf' 'user-dir.dirs' 'user-dir.locale')
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+
+
+cat > ~/.install.sh << EOF
+
+wget 'https://raw.githubusercontent.com/SL33PZ/cfgs/main/settings/pkglist.txt' -O ~/pkglist.txt
+
+yay -S --needed --noconfirm --nouseask --nocleanmenu --nodiffmenu --noeditmenu --noupgrademenu --noredownload --norebuild - < ~/pkglist.txt
+
+mkdir -p ~/.config/kitty
+
+mv ~/.config/kitty ~/.config/kitty/kitty.conf
+
+for i in "${user_conf[@]}"; do
+    cp -v ~/settings/"$i" ~/.config
+done
+
+EOF
+
+chmod +x ~/.install.sh
+
+/usr/bin/bash -v ~/.install.sh && i_pid="$!"
+
+wait "$i_pid"
+
+if [ "$i_pid" == 1 ]; then
+    echo "Error executing install.sh"
+else
+    echo "Successfully executed install.sh"
+    rm -rf ~/install.sh
+    mv -v "$PWD/$filename" "$PWD/tmp.bashrc"
+    mv -v ~/.bashrc.backup ~/.bashrc
+    rm -rf "$filename/tmp.bashrc"
+fi
+
+
+
