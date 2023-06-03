@@ -29,11 +29,11 @@ EOF
 
 chmod +x ~/.install.sh
 
-/usr/bin/bash -v ~/.install.sh && i_pid="$!"
+/usr/bin/bash -v ~/.install.sh
 
-wait "$i_pid"
+wait
 
-if [ "$i_pid" == 1 ]; then
+if wait != 0; then
     echo "Error executing install.sh"
 else
     echo "Successfully executed install.sh"
