@@ -5,8 +5,13 @@ set -x
 source .env
 
 old_mountpoint="$/mnt/*"
-chroot="$(wget https://raw.githubusercontent.com/SL33PZ/cfgs/main/chroot.sh -O -)"
+chroot="$(/usr/bin/wget https://raw.githubusercontent.com/SL33PZ/cfgs/main/chroot.sh -O -)"
 
+function err_log () {
+  if [ "$?" != 0 ]; then
+    2&>>log.txt; exit 1
+  fi
+}
 
 init_packages=('base' 'dosfstools' 'openssl' 'parted' 'micro' 'nano' 'base-devel')
 packages_root=(
