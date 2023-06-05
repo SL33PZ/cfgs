@@ -13,7 +13,7 @@ function err_log () {
   fi
 }
 
-init_packages=('base' 'dosfstools' 'openssl' 'parted' 'micro' 'nano' 'base-devel')
+init_packages=('base' 'base-devel' 'dosfstools' 'openssl' 'parted' 'micro' 'nano' 'base-devel')
 packages_root=(
 'base' 'base-devel' 'linux' 'linux-firmware' 'linux-headers' 'mesa' 'ruby' 'networkmanager' 'network-manager-applet' 'xorg' 'xorg-xinit' 'xorg-server' 
 'grub' 'efibootmgr' 'dosfstools' 'mtools' 'os-prober' 'sof-firmware' 'alsa-utils' 'alsa-plugins' 'alsa-firmware' 'intel-ucode' 
