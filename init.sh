@@ -5,7 +5,7 @@ set -x
 source .envextra
 
 old_mountpoint="$/mnt/*"
-chroot="$(/usr/bin/wget https://raw.githubusercontent.com/SL33PZ/cfgs/main/chroot.sh -O -)"
+chroot="$(wget https://raw.githubusercontent.com/SL33PZ/cfgs/main/chroot.sh -O -)"
 
 function err_log () {
   if [ "$?" != 0 ]; then
