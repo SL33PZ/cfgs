@@ -2,7 +2,7 @@
 #shellcheck source=.env
 #shellcheck disable=SC1091
 set -x
-source .envextra
+source .env
 
 old_mountpoint="$/mnt/*"
 chroot="$(wget https://raw.githubusercontent.com/SL33PZ/cfgs/main/chroot.sh -O -)"
