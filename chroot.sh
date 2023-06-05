@@ -57,7 +57,7 @@ trap signal_exit "INT"  INT
 mkdir -p "$efi" || err_log
 mount "/dev/$EFI_PARTITION" "$efi" || err_log
 
-grub-install --bootloader-id=BlackNet || err_log
+grub-install --bootloader-id="BlackNet" || err_log
 sed -i 's/^#GRUB_DISABLE_OS_PROBER/GRUB_DISABLE_OS_PROBER/' /etc/default/grub || err_log
 grub-mkconfig -o /boot/grub/grub.cfg err_log || err_log
 mkdir -p /var/lock/dmraid || err_log
