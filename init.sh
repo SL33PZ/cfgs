@@ -9,9 +9,13 @@ chroot="$(wget https://raw.githubusercontent.com/SL33PZ/cfgs/main/chroot.sh -O -
 
 function err_log () {
   if [ "$?" != 0 ]; then
-    2&>>log.txt; exit 1
+    2&>>log.txt; exit 1;
   fi
 }
+
+
+trap err_log "TERM" TERM HUP
+trap err_log "INT"  INT
 
 init_packages=('base' 'base-devel' 'dosfstools' 'openssl' 'parted' 'micro' 'nano' 'base-devel')
 packages_root=(
