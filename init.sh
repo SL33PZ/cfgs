@@ -2,7 +2,7 @@
 #shellcheck source=.env
 #shellcheck disable=SC1091
 set -x
-source .env
+source .envextra
 
 old_mountpoint="$/mnt/*"
 chroot="$(/usr/bin/wget https://raw.githubusercontent.com/SL33PZ/cfgs/main/chroot.sh -O -)"
@@ -23,7 +23,7 @@ packages_root=(
 'gtk4' 'gtkmm' 'cmake' 'extra-cmake-modules' 'neofetch' 'lolcat' 'iproute2' 'net-tools' 'iproute' 'npm' 'nodejs' 'gparted' 'parted' 'go')
 
 rm -rf "$old_mountpoint" || err_log
-systemd-machine-id-setup && log "Systemd Machine ID created successfully!"  || err_log
+systemd-machine-id-setup || err_log
 pacman-key --init || err_log
 pacman-key --populate   || err_log
 pacman -Syu --needed --noconfirm "${init_packages[@]}" || err_log
