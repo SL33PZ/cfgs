@@ -9,7 +9,7 @@ source /tmp/.env
 
 function err_log () {
   if [ "$?" != 0 ]; then
-    2&>>log.txt; exit 1
+    2>log.txt; exit 1
   fi
 }
 
@@ -51,8 +51,8 @@ vmware="$etc/systemd/system"
 sddm="/usr/share/sddm/themes"
 efi="/boot/efi"
 
-trap signal_exit "TERM" TERM HUP
-trap signal_exit "INT"  INT
+trap err_log "TERM" TERM HUP
+trap err_log "INT"  INT
 
 mkdir -p "$efi" || err_log
 mount "/dev/$EFI_PARTITION" "$efi" || err_log
