@@ -1,12 +1,10 @@
 #!/usr/bin/env bash
 # ~/.bashrc
 
+filename="$0"
+
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
-
-wget 'https://raw.githubusercontent.com/SL33PZ/cfgs/main/settings/pkglist.txt' -O ~/pkglist.txt
-
-yay -S --needed --noconfirm --nouseask --nocleanmenu --nodiffmenu --noeditmenu --noupgrademenu --noredownload --norebuild - < ~/pkglist.txt
