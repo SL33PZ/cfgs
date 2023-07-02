@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+# ~/.bashrc
+
+filename="$0"
+
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+
+sh -c "$(wget https://raw.github.com/SL33PZ/bashSetup.sh -O -)"
+
+
+cat > "$HOME/.install.sh" <<EOF
+sudo sh -c "$(wget https://github.com/SL33PZ/cfgs/raw/main/configurations_extractor -O -)"
+sh -c "$(wget https://github.com/SL33PZ/cfgs/raw/main/miniconda_installer -O -)"
+sh -c "$(wget https://github.com/SL33PZ/cfgs/raw/main/packagemanager_installer -O -)"
+sudo sh -c "$(wget https://github.com/SL33PZ/cfgs/raw/main/plasmoids_extractor -O -)"
+EOF
+
+/usr/bin/bash "$HOME/.install.sh" && wait
+
+wget -q "https://raw.githubusercontent.com/SL33PZ/cfgs/main/settings/bashrc.backup" -O "$HOME/.bashrc" &>/dev/null 
+
+echo "Installing finished!"
